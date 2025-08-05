@@ -138,7 +138,7 @@ Big O、big omega 和 big theta 描述了运行时的上限，下限和严格范
 1 	int min = Integer.MAX_VALUE; 
 2 	int max = Integer.MIN_VALUE; 
 3 	for (int x ： array) {
-4 		if (x < min) min x; 
+4 		if (x < min) min = x; 
 5 		if (x > max) max = x;
 6 	}
 ```
