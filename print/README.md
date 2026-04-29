@@ -7,7 +7,7 @@
 
 | 情境                                             | 用哪支 script                                  | 說明                                                                                                                                  |
 | ---------------------------------------------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| 希望 **8 冊騎馬釘分冊**（依 `booklet-0*` manifest；輸出一個資料夾內扁平 `booklet-*.pdf`） | `./scripts/build_balanced_booklets.sh [config.env] [輸出目錄]` | 預設輸入 `print/manifests/booklet-0*.txt`，預設輸出目錄 `dist/booklets`。並發：`PDF_BUILD_JOBS`。 |
+| 希望 **8 冊騎馬釘分冊**（`booklet-0*` manifest） | `./scripts/build_balanced_booklets.sh [config.env] [輸出根]` | 預設輸出根 `out/balanced`：`reader-a5/`、`booklet-a4/`。可加 `--a4-only`。並發：`PDF_BUILD_JOBS`。 |
 | 一章（或一卷）對應 **一個 PDF**；頁數隨該檔長度而定，**可能超過** 上述範圍   | `./scripts/build_all_chapter_booklets.sh …` | 預設產約 31 份（前言到附錄）。只要第 1–17 題章節：加 `chapters` 當第一參數（見下文）。                                                                          |
 
 
@@ -78,13 +78,13 @@ PDF_BUILD_JOBS=6 ./scripts/build_all_chapter_booklets.sh chapters
 
 ## 平衡版分冊（8 冊）
 
-整書依 `print/manifests/booklet-0*-*.txt` 合為 **8 本**騎馬釘用 A4 PDF；預設寫入 **`dist/booklets/booklet-0*.pdf`**（reader 僅暫存，不另存）。
-
-manifest 示例：`booklet-01-preface-to-before-interview.txt` … `booklet-08-threads-moderate-hard-code-library.txt`。
+整書依 `print/manifests/booklet-0*-*.txt` 合為 **8 本**；預設寫入 **`out/balanced/reader-a5/`** 與 **`out/balanced/booklet-a4/`**（檔名形如 `booklet-01-…-reader-a5.pdf`、`booklet-01-…-booklet-a4.pdf`）。
 
 ```bash
 ./scripts/build_balanced_booklets.sh
-./scripts/build_balanced_booklets.sh print/config/chapter-booklet.env dist/booklets
+./scripts/build_balanced_booklets.sh print/config/chapter-booklet.env out/balanced
+# 只保留 booklet-a4、reader 用暫存：
+./scripts/build_balanced_booklets.sh print/config/chapter-booklet.env out/balanced --a4-only
 ```
 
 舊版 `print/manifests/balanced/01-*`～`10-*` 仍可手動餵給 `./scripts/build_print_pdf.sh`。
