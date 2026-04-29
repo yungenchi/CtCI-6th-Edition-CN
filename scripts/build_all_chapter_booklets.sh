@@ -13,6 +13,9 @@
 # B) 相容舊寫法：未寫 mode 時，若第一個參數為 .env 檔視為設定檔
 #    ./scripts/build_all_chapter_booklets.sh [config.env] [output_root]
 #
+# 並發預設 4：（依機器調整）
+#   PDF_BUILD_JOBS=8 ./scripts/build_all_chapter_booklets.sh chapters
+#
 # 範例：
 #   ./scripts/build_all_chapter_booklets.sh
 #   ./scripts/build_all_chapter_booklets.sh chapters
@@ -48,12 +51,26 @@ else
   exit 1
 fi
 
-reader_dir="$output_root/reader-a5"
-booklet_dir="$output_root/booklet-a4"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+if [[ "${config_file:0:1}" == "/" ]]; then
+  abs_config="$config_file"
+else
+  abs_config="$ROOT/$config_file"
+fi
+if [[ "${output_root:0:1}" == "/" ]]; then
+  abs_out_root="$output_root"
+else
+  abs_out_root="$ROOT/$output_root"
+fi
+
+reader_dir="$abs_out_root/reader-a5"
+booklet_dir="$abs_out_root/booklet-a4"
 tmp_dir="$(mktemp -d)"
 trap 'rm -rf "$tmp_dir"' EXIT
 
 mkdir -p "$reader_dir" "$booklet_dir"
+
+pdf_jobs="${PDF_BUILD_JOBS:-4}"
 
 entries_all=(
   "000-translator-preface|README.md"
@@ -115,22 +132,16 @@ else
   entries=("${entries_all[@]}")
 fi
 
-for entry in "${entries[@]}"; do
-  name="${entry%%|*}"
-  source_file="${entry##*|}"
-  manifest_file="$tmp_dir/$name.txt"
+export PDF_W_CHUNK_ROOT="$ROOT"
+export PDF_W_CHUNK_TMP_ROOT="$tmp_dir"
+export PDF_W_CHUNK_CONFIG="$abs_config"
+export PDF_W_CHUNK_OUT_ROOT="$abs_out_root"
 
-  printf '%s\n' "$source_file" > "$manifest_file"
+WORKER="$ROOT/scripts/pdf_worker_chunk_booklet.sh"
 
-  ./scripts/build_booklet_pdf.sh \
-    "$manifest_file" \
-    "$reader_dir/$name-reader-a5.pdf" \
-    "$booklet_dir/$name-booklet-a4.pdf" \
-    "$config_file" \
-    >/dev/null
+printf '%s\n' "${entries[@]}" | (
+  cd "$ROOT" && xargs -P "$pdf_jobs" -n 1 bash "$WORKER"
+)
 
-  echo "Built $name"
-done
-
-echo "Reader PDFs: $reader_dir"
-echo "Booklet PDFs: $booklet_dir"
+echo "Reader PDFs: $reader_dir/"
+echo "Booklet PDFs: $booklet_dir/"

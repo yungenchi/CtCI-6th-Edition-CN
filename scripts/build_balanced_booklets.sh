@@ -8,6 +8,9 @@
 #   ./scripts/build_balanced_booklets.sh [config.env] [output_root] --a4-only
 #
 # --a4-only  只輸出 A4 騎馬釘 PDF；不要求另存 reader-a5（仍會建暫存檔供 pdfbook2 用）。
+#
+# 並發：預設同時最多 4 個 XeLaTeX（可用環境變數調整）。
+#   PDF_BUILD_JOBS=8 ./scripts/build_balanced_booklets.sh
 
 set -euo pipefail
 
@@ -24,16 +27,39 @@ set -- "${args[@]}"
 
 config_file="${1:-print/config/chapter-booklet.env}"
 output_root="${2:-out/balanced}"
+pdf_jobs="${PDF_BUILD_JOBS:-4}"
 
-reader_dir="$output_root/reader-a5"
-booklet_dir="$output_root/booklet-a4"
-tmp_dir=""
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+if [[ "${config_file:0:1}" == "/" ]]; then
+  abs_config="$config_file"
+else
+  abs_config="$ROOT/$config_file"
+fi
+if [[ "${output_root:0:1}" == "/" ]]; then
+  abs_out_root="$output_root"
+else
+  abs_out_root="$ROOT/$output_root"
+fi
+
+reader_dir="$abs_out_root/reader-a5"
+booklet_dir="$abs_out_root/booklet-a4"
+tmp_keep=""
 if [[ "$a4_only" == "1" ]]; then
-  tmp_dir="$(mktemp -d)"
-  trap 'rm -rf "$tmp_dir"' EXIT
+  tmp_keep="$(mktemp -d)"
+  trap 'rm -rf "$tmp_keep"' EXIT
 fi
 
 mkdir -p "$reader_dir" "$booklet_dir"
+
+export PDF_W_BALANCED_ROOT="$ROOT"
+export PDF_W_BALANCED_CONFIG="$abs_config"
+export PDF_W_BALANCED_OUT_ROOT="$abs_out_root"
+export PDF_W_A4_ONLY="$a4_only"
+if [[ "$a4_only" == "1" ]]; then
+  export PDF_W_TMP_KEEP="$tmp_keep"
+else
+  unset PDF_W_TMP_KEEP
+fi
 
 entries=(
   "01-frontmatter-and-overview"
@@ -48,27 +74,13 @@ entries=(
   "10-code-library-and-author"
 )
 
-for name in "${entries[@]}"; do
-  manifest="print/manifests/balanced/$name.txt"
+WORKER="$ROOT/scripts/pdf_worker_balanced.sh"
 
-  if [[ "$a4_only" == "1" ]]; then
-    reader_out="$tmp_dir/$name-reader-a5.pdf"
-  else
-    reader_out="$reader_dir/$name-reader-a5.pdf"
-  fi
-  booklet_out="$booklet_dir/$name-booklet-a4.pdf"
+printf '%s\n' "${entries[@]}" | (
+  cd "$ROOT" && xargs -P "$pdf_jobs" -n 1 bash "$WORKER"
+)
 
-  ./scripts/build_booklet_pdf.sh \
-    "$manifest" \
-    "$reader_out" \
-    "$booklet_out" \
-    "$config_file" \
-    >/dev/null
-
-  echo "Built $name"
-done
-
-echo "Booklet PDFs: $booklet_dir"
+echo "Booklet PDFs: $booklet_dir/"
 if [[ "$a4_only" != "1" ]]; then
-  echo "Reader PDFs: $reader_dir"
+  echo "Reader PDFs: $reader_dir/"
 fi

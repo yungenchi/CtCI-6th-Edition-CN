@@ -13,6 +13,13 @@
 
 更底層、自己指定單次 manifest：`./scripts/build_print_pdf.sh`。
 
+並發預設 **4**（同時跑多個 XeLaTeX，可縮短總時間；依 CPU／記憶體調校）：
+
+```bash
+PDF_BUILD_JOBS=8 ./scripts/build_balanced_booklets.sh
+PDF_BUILD_JOBS=6 ./scripts/build_all_chapter_booklets.sh chapters
+```
+
 ## 檔案分工
 
 - `print/manifests/*.txt`
