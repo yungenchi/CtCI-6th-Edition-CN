@@ -23,7 +23,11 @@ for a in "$@"; do
     args+=("$a")
   fi
 done
-set -- "${args[@]}"
+if ((${#args[@]})); then
+  set -- "${args[@]}"
+else
+  set --
+fi
 
 config_file="${1:-print/config/chapter-booklet.env}"
 output_root="${2:-out/balanced}"
