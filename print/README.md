@@ -4,10 +4,12 @@
 
 ## 腳本該用哪一支？（騎馬釘／頁數）
 
-| 情境 | 用哪支 script | 說明 |
-|------|----------------|------|
-| 希望全書拆成數本「厚度適中」的小冊，方便騎馬釘（討論上常以約 **24–48 頁**為參考） | `./scripts/build_balanced_booklets.sh` | `print/manifests/balanced/*.txt` 已把多篇 `.md` 合併成約 **10** 本分冊。**頁數是內容加總的結果**，不是自動裁切到某一頁數。可加 `--a4-only` 只輸出 A4 摺頁用檔（不另外留下 reader-a5）。 |
-| 一章（或一卷）對應 **一個 PDF**；頁數隨該檔長度而定，**可能超過** 上述範圍 | `./scripts/build_all_chapter_booklets.sh …` | 預設產約 31 份（前言到附錄）。只要第 1–17 題章節：加 **`chapters`** 當第一參數（見下文）。 |
+
+| 情境                                             | 用哪支 script                                  | 說明                                                                                                                                  |
+| ---------------------------------------------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| 希望 **8 冊騎馬釘分冊**（依 `booklet-0*` manifest；輸出一個資料夾內扁平 `booklet-*.pdf`） | `./scripts/build_balanced_booklets.sh [config.env] [輸出目錄]` | 預設輸入 `print/manifests/booklet-0*.txt`，預設輸出目錄 `dist/booklets`。並發：`PDF_BUILD_JOBS`。 |
+| 一章（或一卷）對應 **一個 PDF**；頁數隨該檔長度而定，**可能超過** 上述範圍   | `./scripts/build_all_chapter_booklets.sh …` | 預設產約 31 份（前言到附錄）。只要第 1–17 題章節：加 `chapters` 當第一參數（見下文）。                                                                          |
+
 
 底層都會呼叫 `build_booklet_pdf.sh`（A5 → `pdfbook2` → A4 騎馬釘排版）。
 
@@ -23,11 +25,11 @@ PDF_BUILD_JOBS=6 ./scripts/build_all_chapter_booklets.sh chapters
 ## 檔案分工
 
 - `print/manifests/*.txt`
-  放「這一冊要收哪些章節」。
+放「這一冊要收哪些章節」。
 - `print/config/default.env`
-  放版面參數，例如字體、頁面大小、邊界、字級。
+放版面參數，例如字體、頁面大小、邊界、字級。
 - `scripts/build_print_pdf.sh`
-  讀 manifest 和 config，然後輸出 PDF。
+讀 manifest 和 config，然後輸出 PDF。
 
 ## 第一冊
 
@@ -61,45 +63,31 @@ PDF_BUILD_JOBS=6 ./scripts/build_all_chapter_booklets.sh chapters
 在 `print/config/default.env` 直接改：
 
 - `CJK_MAINFONT`
-  中文正文字體。
+中文正文字體。
 - `PAPER_WIDTH` / `PAPER_HEIGHT`
-  頁面尺寸。
+頁面尺寸。
 - `INNER_MARGIN` / `OUTER_MARGIN` / `TOP_MARGIN` / `BOTTOM_MARGIN`
-  四邊邊界。
+四邊邊界。
 - `FONT_SIZE`
-  正文字級。
+正文字級。
 
 ## 補充
 
 - 目前這套設定是 `A5 + 12pt`，比較像書，不像講義。
 - 目前 `50 頁` 不是寫死在腳本裡，而是「第一冊 manifest + default.env 版面設定」跑出來的結果。
 
-## 平衡版分冊
+## 平衡版分冊（8 冊）
 
-如果你想把整本拆成比較厚、但還適合騎馬釘的小冊，現在有一組現成 manifests：
+整書依 `print/manifests/booklet-0*-*.txt` 合為 **8 本**騎馬釘用 A4 PDF；預設寫入 **`dist/booklets/booklet-0*.pdf`**（reader 僅暫存，不另存）。
 
-- `print/manifests/balanced/01-frontmatter-and-overview.txt`
-- `print/manifests/balanced/02-special-situations-and-prep.txt`
-- `print/manifests/balanced/03-big-o.txt`
-- `print/manifests/balanced/04-technical-questions-and-offer.txt`
-- `print/manifests/balanced/05-core-data-structures.txt`
-- `print/manifests/balanced/06-bit-math-ood.txt`
-- `print/manifests/balanced/07-dp-system-design-sorting.txt`
-- `print/manifests/balanced/08-testing-cpp-java.txt`
-- `print/manifests/balanced/09-db-threads-moderate-hard.txt`
-- `print/manifests/balanced/10-code-library-and-author.txt`
-
-整批輸出（reader-a5 與 booklet-a4 都會寫到 `out/balanced/`）：
+manifest 示例：`booklet-01-preface-to-before-interview.txt` … `booklet-08-threads-moderate-hard-code-library.txt`。
 
 ```bash
 ./scripts/build_balanced_booklets.sh
+./scripts/build_balanced_booklets.sh print/config/chapter-booklet.env dist/booklets
 ```
 
-只要 A4 騎馬釘檔、不保留 reader：
-
-```bash
-./scripts/build_balanced_booklets.sh print/config/chapter-booklet.env out/balanced --a4-only
-```
+舊版 `print/manifests/balanced/01-*`～`10-*` 仍可手動餵給 `./scripts/build_print_pdf.sh`。
 
 ## 依「單一檔案」各產一冊（一章一 PDF）
 
@@ -118,3 +106,4 @@ PDF_BUILD_JOBS=6 ./scripts/build_all_chapter_booklets.sh chapters
 # 舊版寫法（未寫 chapters / all）：第一個變數為 .env
 ./scripts/build_all_chapter_booklets.sh print/config/chapter-booklet.env out/chapters
 ```
+
