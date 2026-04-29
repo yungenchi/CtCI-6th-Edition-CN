@@ -217,3 +217,10 @@ TenantApartments 表存储了 Tenants 和 Apartments 之间的关系。
 
 <div align=center><img src="img/ch14_3.png"/></div>
 
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库。当前基准 commit 为 `653e50c`。
+
+上游仓库目前未提供本章对应的 Python 解答，因此此处暂不内嵌源码。

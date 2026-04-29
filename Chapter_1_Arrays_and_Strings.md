@@ -178,3 +178,81 @@ StringBuilder 可以帮你避免这个问题。StringBuilder 只是创建一个�
 **附加问题**：面向对象设计(#7.12)，递归(#8.3)，排序和搜索(#10.9)，C++(#12.11 )，中等问题(#16.8, #16.17, #16.22)，困难问题(#17.4, #17.7, #17.13, #17.22, #17.26)。
 
 提示从第 653 页开始。
+
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库，并以内嵌源码的方式放在本章末尾，避免额外分册。当前基准 commit 为 `653e50c`。原始文件也保存在 [solutions/python/README.md](solutions/python/README.md) 与 [solutions/python/chapter_01](solutions/python/chapter_01)。
+
+#### 1.1 是否唯一（Is Unique）
+
+源码：[p01_is_unique.py](solutions/python/chapter_01/p01_is_unique.py)
+
+```python
+{{#include solutions/python/chapter_01/p01_is_unique.py}}
+```
+
+#### 1.2 检查全排列（Check Permutation）
+
+源码：[p02_check_permutation.py](solutions/python/chapter_01/p02_check_permutation.py)
+
+```python
+{{#include solutions/python/chapter_01/p02_check_permutation.py}}
+```
+
+#### 1.3 URL化（URLify）
+
+源码：[p03_urlify.py](solutions/python/chapter_01/p03_urlify.py)
+
+```python
+{{#include solutions/python/chapter_01/p03_urlify.py}}
+```
+
+#### 1.4 回文全排列（Palindrome Permutation）
+
+源码：[p04_palindrome_permutation.py](solutions/python/chapter_01/p04_palindrome_permutation.py)
+
+```python
+{{#include solutions/python/chapter_01/p04_palindrome_permutation.py}}
+```
+
+#### 1.5 差一步（One Away）
+
+源码：[p05_one_away.py](solutions/python/chapter_01/p05_one_away.py)
+
+```python
+{{#include solutions/python/chapter_01/p05_one_away.py}}
+```
+
+#### 1.6 字符串压缩（String Compression）
+
+源码：[p06_string_compression.py](solutions/python/chapter_01/p06_string_compression.py)
+
+```python
+{{#include solutions/python/chapter_01/p06_string_compression.py}}
+```
+
+#### 1.7 旋转矩阵（Rotate Matrix）
+
+源码：[p07_rotate_matrix.py](solutions/python/chapter_01/p07_rotate_matrix.py)
+
+```python
+{{#include solutions/python/chapter_01/p07_rotate_matrix.py}}
+```
+
+#### 1.8 零矩阵（Zero Matrix）
+
+源码：[p08_zero_matrix.py](solutions/python/chapter_01/p08_zero_matrix.py)
+
+```python
+{{#include solutions/python/chapter_01/p08_zero_matrix.py}}
+```
+
+#### 1.9 字符串旋转（String Rotation）
+
+源码：[p09_string_rotation.py](solutions/python/chapter_01/p09_string_rotation.py)
+
+```python
+{{#include solutions/python/chapter_01/p09_string_rotation.py}}
+```

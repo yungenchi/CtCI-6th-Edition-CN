@@ -165,3 +165,19 @@
 **附加问题**：线程和锁 (#16.3)
 
 提示从第 662 页开始。
+
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库，并以内嵌源码的方式放在本章末尾，避免额外分册。当前基准 commit 为 `653e50c`。
+
+上游目前收录了本章 12 题中的 1 题。
+
+#### 7.4 停车场（Parking Lot）
+
+源码：[p04_parking_lot.py](solutions/python/chapter_07/p04_parking_lot.py)
+
+```python
+{{#include solutions/python/chapter_07/p04_parking_lot.py}}
+```

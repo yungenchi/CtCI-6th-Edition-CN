@@ -177,3 +177,64 @@ It uses the operations:
 
 提示从第 653 页开始。
 
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库，并以内嵌源码的方式放在本章末尾，避免额外分册。当前基准 commit 为 `653e50c`。
+
+#### 共用辅助代码
+
+源码：[stack.py](solutions/python/chapter_03/stack.py)
+
+```python
+{{#include solutions/python/chapter_03/stack.py}}
+```
+
+#### 3.1 三合一（Three in One）
+
+源码：[p01_three_in_one.py](solutions/python/chapter_03/p01_three_in_one.py)
+
+```python
+{{#include solutions/python/chapter_03/p01_three_in_one.py}}
+```
+
+#### 3.2 Min函数（Stack Min）
+
+源码：[p02_stack_min.py](solutions/python/chapter_03/p02_stack_min.py)
+
+```python
+{{#include solutions/python/chapter_03/p02_stack_min.py}}
+```
+
+#### 3.3 一摞盘子（Stack of Plates）
+
+源码：[p03_stack_of_plates.py](solutions/python/chapter_03/p03_stack_of_plates.py)
+
+```python
+{{#include solutions/python/chapter_03/p03_stack_of_plates.py}}
+```
+
+#### 3.4 通过堆栈实现队列（Queue via Stacks）
+
+源码：[p04_queue_via_stacks.py](solutions/python/chapter_03/p04_queue_via_stacks.py)
+
+```python
+{{#include solutions/python/chapter_03/p04_queue_via_stacks.py}}
+```
+
+#### 3.5 排序堆栈（Sort Stack）
+
+源码：[p05_sort_stack.py](solutions/python/chapter_03/p05_sort_stack.py)
+
+```python
+{{#include solutions/python/chapter_03/p05_sort_stack.py}}
+```
+
+#### 3.6 动物收容所（Animal Shelter）
+
+源码：[p06_animal_shelter.py](solutions/python/chapter_03/p06_animal_shelter.py)
+
+```python
+{{#include solutions/python/chapter_03/p06_animal_shelter.py}}
+```

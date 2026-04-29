@@ -47,10 +47,5 @@
 
 ---
 
-- [X. 答案](X.Solutions.md)
-- [XI. 进阶主题]()
-<!-- - [XI. 进阶主题](XI.Advanced_Topics.md) -->
 - [XII. 代码库](XII.Code_Library.md)
-- [XIII. 提示]()
-<!-- - [XIII. 提示](XIII.Hints.md) -->
 - [XIV. 关于作者](XIV.About_the_Author.md)

@@ -182,3 +182,81 @@
 **附加问题**：树和图(#4.3)，面向对象设计(#7.12)，系统设计和可扩展性(#9.5)，中等问题(#16.25)，困难问题(#17.12)。
 
 提示从第 653 页开始。
+
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库，并以内嵌源码的方式放在本章末尾，避免额外分册。当前基准 commit 为 `653e50c`。
+
+#### 共用辅助代码
+
+源码：[linked_list.py](solutions/python/chapter_02/linked_list.py)
+
+```python
+{{#include solutions/python/chapter_02/linked_list.py}}
+```
+
+#### 2.1 删除重复项（Remove Dups）
+
+源码：[p01_remove_dups.py](solutions/python/chapter_02/p01_remove_dups.py)
+
+```python
+{{#include solutions/python/chapter_02/p01_remove_dups.py}}
+```
+
+#### 2.2 返回第 K 到最后（Return Kth to Last）
+
+源码：[p02_return_kth_to_last.py](solutions/python/chapter_02/p02_return_kth_to_last.py)
+
+```python
+{{#include solutions/python/chapter_02/p02_return_kth_to_last.py}}
+```
+
+#### 2.3 删除中间节点（Delete Middle Node）
+
+源码：[p03_delete_middle_node.py](solutions/python/chapter_02/p03_delete_middle_node.py)
+
+```python
+{{#include solutions/python/chapter_02/p03_delete_middle_node.py}}
+```
+
+#### 2.4 分区（Partition）
+
+源码：[p04_partition.py](solutions/python/chapter_02/p04_partition.py)
+
+```python
+{{#include solutions/python/chapter_02/p04_partition.py}}
+```
+
+#### 2.5 总和列表（Sum Lists）
+
+源码：[p05_sum_lists.py](solutions/python/chapter_02/p05_sum_lists.py)
+
+```python
+{{#include solutions/python/chapter_02/p05_sum_lists.py}}
+```
+
+#### 2.6 回文（Palindrome）
+
+源码：[p06_palindrome.py](solutions/python/chapter_02/p06_palindrome.py)
+
+```python
+{{#include solutions/python/chapter_02/p06_palindrome.py}}
+```
+
+#### 2.7 相交（Intersection）
+
+源码：[p07_intersection.py](solutions/python/chapter_02/p07_intersection.py)
+
+```python
+{{#include solutions/python/chapter_02/p07_intersection.py}}
+```
+
+#### 2.8 循环检测（Loop Detection）
+
+源码：[p08_loop_detection.py](solutions/python/chapter_02/p08_loop_detection.py)
+
+```python
+{{#include solutions/python/chapter_02/p08_loop_detection.py}}
+```

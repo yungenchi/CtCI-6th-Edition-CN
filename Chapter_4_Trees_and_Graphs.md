@@ -418,3 +418,117 @@ Input:
 **附加问题**：递归(#8.10)，系统设计和可扩展性(#9.2,#9.3)，排序和搜索(#10.10)，困难问题(#17.7,#17.12,#17.13,#17.14,#17.17,#17.20,#17.22,#17.25)。
 
 提示从第 653 页开始。
+
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库，并以内嵌源码的方式放在本章末尾，避免额外分册。当前基准 commit 为 `653e50c`。
+
+#### 共用辅助代码
+
+源码：[binary_tree.py](solutions/python/chapter_04/binary_tree.py)、[binary_search_tree.py](solutions/python/chapter_04/binary_search_tree.py)
+
+```python
+{{#include solutions/python/chapter_04/binary_tree.py}}
+```
+
+```python
+{{#include solutions/python/chapter_04/binary_search_tree.py}}
+```
+
+#### 4.1 节点间路线（Route Between Nodes）
+
+源码：[p01_route_between_nodes.py](solutions/python/chapter_04/p01_route_between_nodes.py)
+
+```python
+{{#include solutions/python/chapter_04/p01_route_between_nodes.py}}
+```
+
+#### 4.2 最小树（Minimal Tree）
+
+源码：[p02_minimal_tree.py](solutions/python/chapter_04/p02_minimal_tree.py)
+
+```python
+{{#include solutions/python/chapter_04/p02_minimal_tree.py}}
+```
+
+#### 4.3 深度列表（List of Depths）
+
+源码：[p03_list_of_depths.py](solutions/python/chapter_04/p03_list_of_depths.py)
+
+```python
+{{#include solutions/python/chapter_04/p03_list_of_depths.py}}
+```
+
+#### 4.4 检查平衡（Check Balanced）
+
+源码：[p04_check_balanced.py](solutions/python/chapter_04/p04_check_balanced.py)
+
+```python
+{{#include solutions/python/chapter_04/p04_check_balanced.py}}
+```
+
+#### 4.5 验证BST（Validate BST）
+
+源码：[p05_validate_bst.py](solutions/python/chapter_04/p05_validate_bst.py)
+
+```python
+{{#include solutions/python/chapter_04/p05_validate_bst.py}}
+```
+
+#### 4.6 后继（Successor）
+
+源码：[p06_successor.py](solutions/python/chapter_04/p06_successor.py)
+
+```python
+{{#include solutions/python/chapter_04/p06_successor.py}}
+```
+
+#### 4.7 构建顺序（Build Order）
+
+源码：[p07_build_order.py](solutions/python/chapter_04/p07_build_order.py)
+
+```python
+{{#include solutions/python/chapter_04/p07_build_order.py}}
+```
+
+#### 4.8 第一个共同祖先（First Common Ancestor）
+
+源码：[p08_first_common_ancestor.py](solutions/python/chapter_04/p08_first_common_ancestor.py)
+
+```python
+{{#include solutions/python/chapter_04/p08_first_common_ancestor.py}}
+```
+
+#### 4.9 BST序列（BST Sequences）
+
+源码：[p09_bst_sequences.py](solutions/python/chapter_04/p09_bst_sequences.py)
+
+```python
+{{#include solutions/python/chapter_04/p09_bst_sequences.py}}
+```
+
+#### 4.10 检查子树（Check Subtree）
+
+源码：[p10_check_subtree.py](solutions/python/chapter_04/p10_check_subtree.py)
+
+```python
+{{#include solutions/python/chapter_04/p10_check_subtree.py}}
+```
+
+#### 4.11 随机节点（Random Node）
+
+源码：[p11_random_node.py](solutions/python/chapter_04/p11_random_node.py)
+
+```python
+{{#include solutions/python/chapter_04/p11_random_node.py}}
+```
+
+#### 4.12 带求和的路径（Paths with Sum）
+
+源码：[p12_paths_with_sum.py](solutions/python/chapter_04/p12_paths_with_sum.py)
+
+```python
+{{#include solutions/python/chapter_04/p12_paths_with_sum.py}}
+```

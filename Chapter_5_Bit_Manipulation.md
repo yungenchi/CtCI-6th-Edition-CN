@@ -227,6 +227,69 @@ setBit 方法将 1 向左移位 i 位，创建一个类似于 00010000 的值。
 
 提示从第 662 页开始。
 
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库，并以内嵌源码的方式放在本章末尾，避免额外分册。当前基准 commit 为 `653e50c`。
+
+上游目前收录了本章 8 题中的 7 题；`5.5 调试器（Debugger）` 暂无对应 Python 解答。
+
+#### 5.1 插入（Insertion）
+
+源码：[p01_insertion.py](solutions/python/chapter_05/p01_insertion.py)
+
+```python
+{{#include solutions/python/chapter_05/p01_insertion.py}}
+```
+
+#### 5.2 二进制到字符串（Binary to String）
+
+源码：[p02_binary_to_string.py](solutions/python/chapter_05/p02_binary_to_string.py)
+
+```python
+{{#include solutions/python/chapter_05/p02_binary_to_string.py}}
+```
+
+#### 5.3 翻转位取胜（Flip Bit to Win）
+
+源码：[p03_flip_bit_to_win.py](solutions/python/chapter_05/p03_flip_bit_to_win.py)
+
+```python
+{{#include solutions/python/chapter_05/p03_flip_bit_to_win.py}}
+```
+
+#### 5.4 下一个数字（Next Number）
+
+源码：[p04_next_number.py](solutions/python/chapter_05/p04_next_number.py)
+
+```python
+{{#include solutions/python/chapter_05/p04_next_number.py}}
+```
+
+#### 5.6 转换（Conversion）
+
+源码：[p06_conversion.py](solutions/python/chapter_05/p06_conversion.py)
+
+```python
+{{#include solutions/python/chapter_05/p06_conversion.py}}
+```
+
+#### 5.7 成对交换（Pairwise Swap）
+
+源码：[p07_pairwise_swap.py](solutions/python/chapter_05/p07_pairwise_swap.py)
+
+```python
+{{#include solutions/python/chapter_05/p07_pairwise_swap.py}}
+```
+
+#### 5.8 画线（Draw Line）
+
+源码：[p08_draw_line.py](solutions/python/chapter_05/p08_draw_line.py)
+
+```python
+{{#include solutions/python/chapter_05/p08_draw_line.py}}
+```
 
 
 

@@ -284,3 +284,121 @@
 **附加问题**：链表(#2.2, #2.5, #2.6)，栈和队列(#3.3)，树和图(#4.2, #4.3, #4.4, #4.5, #4.8, #4.10, #4.11, #4.12)，数学和逻辑难题(#6.6)，排序和搜索(#10.5, #10.9, #10.10)，C++(#12.8)，中等问题(#16.11)，困难问题(#17.4, #17.6, #17.8, #17.12, #17.13, #17.15, #17.16, #17.24, #17.25)。
 
 提示从第 662 页开始。
+
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库，并以内嵌源码的方式放在本章末尾，避免额外分册。当前基准 commit 为 `653e50c`。
+
+#### 8.1 三步问题（Triple Step）
+
+源码：[p01_triple_step.py](solutions/python/chapter_08/p01_triple_step.py)
+
+```python
+{{#include solutions/python/chapter_08/p01_triple_step.py}}
+```
+
+#### 8.2 机器人网格（Robot in a Grid）
+
+源码：[p02_robot_grid.py](solutions/python/chapter_08/p02_robot_grid.py)
+
+```python
+{{#include solutions/python/chapter_08/p02_robot_grid.py}}
+```
+
+#### 8.3 魔术索引（Magic Index）
+
+源码：[p03_magic_index.py](solutions/python/chapter_08/p03_magic_index.py)
+
+```python
+{{#include solutions/python/chapter_08/p03_magic_index.py}}
+```
+
+#### 8.4 幂集（Power Set）
+
+源码：[p04_power_set.py](solutions/python/chapter_08/p04_power_set.py)
+
+```python
+{{#include solutions/python/chapter_08/p04_power_set.py}}
+```
+
+#### 8.5 递归乘法（Recursive Multiply）
+
+源码：[p05_recursive_multiply.py](solutions/python/chapter_08/p05_recursive_multiply.py)
+
+```python
+{{#include solutions/python/chapter_08/p05_recursive_multiply.py}}
+```
+
+#### 8.6 汉诺塔（Towers of Hanoi）
+
+源码：[p06_towers_of_hanoi.py](solutions/python/chapter_08/p06_towers_of_hanoi.py)
+
+```python
+{{#include solutions/python/chapter_08/p06_towers_of_hanoi.py}}
+```
+
+#### 8.7 无重复字符串的排列（Permutations without Dups）
+
+源码：[p07_permutations_without_dups.py](solutions/python/chapter_08/p07_permutations_without_dups.py)
+
+```python
+{{#include solutions/python/chapter_08/p07_permutations_without_dups.py}}
+```
+
+#### 8.8 有重复字符的排列（Permutations with Dups）
+
+源码：[p08_permutations_with_dups.py](solutions/python/chapter_08/p08_permutations_with_dups.py)
+
+```python
+{{#include solutions/python/chapter_08/p08_permutations_with_dups.py}}
+```
+
+#### 8.9 括号（Parens）
+
+源码：[p09_parens.py](solutions/python/chapter_08/p09_parens.py)
+
+```python
+{{#include solutions/python/chapter_08/p09_parens.py}}
+```
+
+#### 8.10 颜料填充（Paint Fill）
+
+源码：[p10_paint_fill.py](solutions/python/chapter_08/p10_paint_fill.py)
+
+```python
+{{#include solutions/python/chapter_08/p10_paint_fill.py}}
+```
+
+#### 8.11 硬币（Coins）
+
+源码：[p11_coins.py](solutions/python/chapter_08/p11_coins.py)
+
+```python
+{{#include solutions/python/chapter_08/p11_coins.py}}
+```
+
+#### 8.12 八皇后（Eight Queens）
+
+源码：[p12_eight_queens.py](solutions/python/chapter_08/p12_eight_queens.py)
+
+```python
+{{#include solutions/python/chapter_08/p12_eight_queens.py}}
+```
+
+#### 8.13 最高的堆叠（Tallest Stack）
+
+源码：[p13_tallest_stack.py](solutions/python/chapter_08/p13_tallest_stack.py)
+
+```python
+{{#include solutions/python/chapter_08/p13_tallest_stack.py}}
+```
+
+#### 8.14 布尔表达式求值（Boolean Evaluation）
+
+源码：[p14_boolean_evaluation.py](solutions/python/chapter_08/p14_boolean_evaluation.py)
+
+```python
+{{#include solutions/python/chapter_08/p14_boolean_evaluation.py}}
+```

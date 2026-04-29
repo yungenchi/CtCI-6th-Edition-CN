@@ -279,3 +279,51 @@ merge 方法会将目标数组段中的所有元素复制到辅助（helper）�
 **附加问题**：数组和字符串(#1.2)，递归(#8.3)，中等问题(#16.1 O, #16.16, #16.21, #16.24)，困难问题(#17.11, #17.26)。
 
 提示从第 662 页开始。
+
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库，并以内嵌源码的方式放在本章末尾，避免额外分册。当前基准 commit 为 `653e50c`。
+
+上游目前收录了本章 11 题中的 5 题。
+
+#### 10.1 合并排序数组（Sorted Merge）
+
+源码：[p01_sorted_merge.py](solutions/python/chapter_10/p01_sorted_merge.py)
+
+```python
+{{#include solutions/python/chapter_10/p01_sorted_merge.py}}
+```
+
+#### 10.2 变位词分组（Group Anagrams）
+
+源码：[p02_group_anagrams.py](solutions/python/chapter_10/p02_group_anagrams.py)
+
+```python
+{{#include solutions/python/chapter_10/p02_group_anagrams.py}}
+```
+
+#### 10.3 搜索旋转数组（Search in Rotated Array）
+
+源码：[p03_search_in_rotated_array.py](solutions/python/chapter_10/p03_search_in_rotated_array.py)
+
+```python
+{{#include solutions/python/chapter_10/p03_search_in_rotated_array.py}}
+```
+
+#### 10.4 没有大小的排序搜索（Sorted Search, No Size）
+
+源码：[p04_search_sorted_no_size_array.py](solutions/python/chapter_10/p04_search_sorted_no_size_array.py)
+
+```python
+{{#include solutions/python/chapter_10/p04_search_sorted_no_size_array.py}}
+```
+
+#### 10.5 稀疏搜索（Sparse Search）
+
+源码：[p05_sparse_search.py](solutions/python/chapter_10/p05_sparse_search.py)
+
+```python
+{{#include solutions/python/chapter_10/p05_sparse_search.py}}
+```

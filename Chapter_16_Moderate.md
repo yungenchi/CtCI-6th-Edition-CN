@@ -206,3 +206,59 @@
 	```
   
   *提示：#545, #557, #564, #577, #583, #592, #602, #606, #635*
+
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库，并以内嵌源码的方式放在本章末尾，避免额外分册。当前基准 commit 为 `653e50c`。
+
+上游目前收录了本章部分题目，以下为已有 Python 解答的题号。
+
+#### 16.1 数字翻转器（Number Swapper）
+
+源码：[p01_number_swapper.py](solutions/python/chapter_16/p01_number_swapper.py)
+
+```python
+{{#include solutions/python/chapter_16/p01_number_swapper.py}}
+```
+
+#### 16.2 单词频率（Word Frequencies）
+
+源码：[p02_word_frequencies.py](solutions/python/chapter_16/p02_word_frequencies.py)
+
+```python
+{{#include solutions/python/chapter_16/p02_word_frequencies.py}}
+```
+
+#### 16.6 最小差值（Smallest Difference）
+
+源码：[p06_smallest_difference.py](solutions/python/chapter_16/p06_smallest_difference.py)
+
+```python
+{{#include solutions/python/chapter_16/p06_smallest_difference.py}}
+```
+
+#### 16.8 英文整数（English Int）
+
+源码：[p08_english_int.py](solutions/python/chapter_16/p08_english_int.py)
+
+```python
+{{#include solutions/python/chapter_16/p08_english_int.py}}
+```
+
+#### 16.19 池塘大小（Pond Sizes）
+
+源码：[p19_pond_sizes.py](solutions/python/chapter_16/p19_pond_sizes.py)
+
+```python
+{{#include solutions/python/chapter_16/p19_pond_sizes.py}}
+```
+
+#### 16.26 计算器（Calculator）
+
+源码：[p26_calculator.py](solutions/python/chapter_16/p26_calculator.py)
+
+```python
+{{#include solutions/python/chapter_16/p26_calculator.py}}
+```

@@ -15,7 +15,7 @@
 
 #### 可除性
 
-上面提到的质数定律意味着，为了使数字 x 能整除数字 y（写成 x\y，或mod(y, x) = 0），x 的质因数分解中的所有质数都必须在 y 的质因数分解中。或者，更具体地说：
+上面提到的质数定律意味着，为了使数字 x 能整除数字 y（记作 x | y，或 mod(y, x) = 0），x 的质因数分解中的所有质数都必须在 y 的质因数分解中。或者，更具体地说：
 
 <div align=center><img src="img/ch6_2.png"/></div>
 实际上，x 和 y 的最大公约数是：
@@ -317,3 +317,26 @@ P(x is even or x <=5)
 
 提示从第 662 页开始。
 
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库，并以内嵌源码的方式放在本章末尾，避免额外分册。当前基准 commit 为 `653e50c`。
+
+上游目前收录了本章 10 题中的 2 题。
+
+#### 6.7 世界末日（The Apocalypse）
+
+源码：[p07_the_apocalypse.py](solutions/python/chapter_06/p07_the_apocalypse.py)
+
+```python
+{{#include solutions/python/chapter_06/p07_the_apocalypse.py}}
+```
+
+#### 6.10 毒药（Poison）
+
+源码：[p10_poison.py](solutions/python/chapter_06/p10_poison.py)
+
+```python
+{{#include solutions/python/chapter_06/p10_poison.py}}
+```

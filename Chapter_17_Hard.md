@@ -253,3 +253,99 @@
 	```
   
   *提示：#484, #498, #510, #518, #534, #547, #555, #561, #569, #577, #584, #603, #611, #636*
+
+---
+
+### Python 参考解答
+
+以下内容整理自上游 Python 解答仓库，并以内嵌源码的方式放在本章末尾，避免额外分册。当前基准 commit 为 `653e50c`。
+
+上游目前收录了本章部分题目，以下为已有 Python 解答的题号。
+
+#### 17.1 不用加号相加（Add Without Plus）
+
+源码：[p01_add_without_plus.py](solutions/python/chapter_17/p01_add_without_plus.py)
+
+```python
+{{#include solutions/python/chapter_17/p01_add_without_plus.py}}
+```
+
+#### 17.2 洗牌（Shuffle）
+
+源码：[p02_shuffle.py](solutions/python/chapter_17/p02_shuffle.py)
+
+```python
+{{#include solutions/python/chapter_17/p02_shuffle.py}}
+```
+
+#### 17.7 婴儿名字（Baby Names）
+
+源码：[p07_baby_names.py](solutions/python/chapter_17/p07_baby_names.py)
+
+```python
+{{#include solutions/python/chapter_17/p07_baby_names.py}}
+```
+
+#### 17.8 马戏团塔（Circus Tower）
+
+源码：[p08_circus_tower.py](solutions/python/chapter_17/p08_circus_tower.py)
+
+```python
+{{#include solutions/python/chapter_17/p08_circus_tower.py}}
+```
+
+#### 17.9 第 k 个倍数（Kth Multiple）
+
+源码：[p09_kth_multiple.py](solutions/python/chapter_17/p09_kth_multiple.py)
+
+```python
+{{#include solutions/python/chapter_17/p09_kth_multiple.py}}
+```
+
+#### 17.15 最长单词（Longest Word）
+
+源码：[p15_longest_word.py](solutions/python/chapter_17/p15_longest_word.py)
+
+```python
+{{#include solutions/python/chapter_17/p15_longest_word.py}}
+```
+
+#### 17.16 女按摩师（The Masseuse）
+
+源码：[p16_the_masseuse.py](solutions/python/chapter_17/p16_the_masseuse.py)
+
+```python
+{{#include solutions/python/chapter_17/p16_the_masseuse.py}}
+```
+
+#### 17.17 多重搜索（Multi Search）
+
+源码：[p17_multi_search.py](solutions/python/chapter_17/p17_multi_search.py)
+
+```python
+{{#include solutions/python/chapter_17/p17_multi_search.py}}
+```
+
+#### 17.18 最短超序列（Shortest Supersequence）
+
+源码：[p18_shortest_supersequence.py](solutions/python/chapter_17/p18_shortest_supersequence.py)
+
+```python
+{{#include solutions/python/chapter_17/p18_shortest_supersequence.py}}
+```
+
+#### 17.21 直方图的体积（Volume of Histogram）
+
+源码：[p21_volume_of_histogram.py](solutions/python/chapter_17/p21_volume_of_histogram.py)
+
+```python
+{{#include solutions/python/chapter_17/p21_volume_of_histogram.py}}
+```
+
+#### 17.22 单词变形器（Word Transformer）
+
+源码：[p22_word_transformer.py](solutions/python/chapter_17/p22_word_transformer.py)
+
+```python
+{{#include solutions/python/chapter_17/p22_word_transformer.py}}
+```
